@@ -6,11 +6,12 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import {NavLink} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import TextField from '@material-ui/core/TextField';
 import Input from '@material-ui/core/Input';
 import '../../App.css'
-import './bmi_footer.css'
+
+import { Typography } from "@material-ui/core";
 
 
 const theme = createMuiTheme({
@@ -39,6 +40,7 @@ const styles =  {
   textAlign: "center",
     margin: theme.spacing.unit,
     flexWrap: 'wrap',
+    color: "#ffffff",
    
   },
   input: {
@@ -67,11 +69,31 @@ class Footer extends Component {
 
     const { classes } = this.props;
     let bmi_value = (this.state.weight*this.state.weight)/this.state.height;
-    if (bmi_value>25 ) {
-     this.state.bmi_analysis="Overweight"
-    } else {
-      this.state.bmi_analysis="Healthy"
+    
+    if (bmi_value<18.5 ) {
+     this.state.bmi_analysis="Underweight"
+    } 
+      else {
+
+      if (bmi_value>25 && bmi_value<30 ) {
+        this.state.bmi_analysis="Overweight"
+       }
+
+       else {
+
+        if (bmi_value>30 ) {
+          this.state.bmi_analysis="Obese"
+         }
+
+       else {
+         
+        this.state.bmi_analysis="Healthy"
+
+       }   
+      }
+      
     }
+    const analysis = this.state.bmi_analysis;
 
   return (
     
@@ -132,14 +154,19 @@ class Footer extends Component {
         />  
       
       </form>
-     
-      <Paper style= {styles.container} textAlign="center">
-      <NavLink to="/dietplan">
+    
+
+          <Typography align="center">
+      <Link to={`/${analysis}dietplan`} >
           <Button variant="extendedFab" aria-label="add" color="secondary"  size="large" style={{marginTop: 2}} className={classes.button}>
-            Click Here To View Your Diet Plans!
+         
+            Click Here To View Your Personalized Diet Plans!
           </Button>
-      </NavLink>
-      </Paper>
+      </Link>
+      </Typography>
+
+
+
       </Fragment>
     </MuiThemeProvider >
 </Fragment>
@@ -152,8 +179,16 @@ Footer.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-/* <Button  variant="contained" size="large" color="primary" className={classes.button}>
-       Calculate BMI
-      </Button>*/
+
 
 export default withStyles(styles)(Footer);
+
+/* <Typography align="center">
+      <Link to={`/${analysis}dietplan`} >
+          <Button variant="extendedFab" aria-label="add" color="secondary"  size="large" style={{marginTop: 2}} className={classes.button}>
+         
+            Click Here To View Your Diet Plans!
+          </Button>
+      </Link>
+      </Typography>
+   */

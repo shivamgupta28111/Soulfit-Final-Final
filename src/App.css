@@ -8,17 +8,9 @@ body {
   background-image: url('./images/bg5.jpg') ;
   background-attachment: fixed;
   background-blend-mode: darken;
-  color: #000000;
+  color: #e74c3c;
+}
 
-}
-.sizeforfont{
-  font-size: 150px ;
-}
-.drawerhead {
-  min-block-size: 1px;
-  min-height: 0px;
-  min-width: 1300px;
-}
 
 .horizontal{
   display: flex;
@@ -49,7 +41,7 @@ wrapper {
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #000;
+  color: #fff;
 }
 
 .title-container__title {
@@ -91,12 +83,13 @@ input[type="text"] {
 
 input[type="text"] { 
     outline: none;
-    background-color:  #f52eb2;
+    background-color:  #2dc3c9;
 
 }
+
 input[type="number"] {
   outline:none;
-  background-color: #f52eb2;
+  background-color: #2dc3c9;
 }
 
 input:-webkit-autofill {
@@ -118,40 +111,13 @@ button {
   color: #fff;
   font-weight: 100;
 }
+
 paper
 {
   background-color: aqua;
+  color: crimson;
 }
+
 button:active {
   outline: none;
-}
-
-.weather__info {
-  width: 60%;
-  font-size: 20px;
-  font-weight: 200;
-  letter-spacing: 2px;
-}
-
-.weather__key {
-  color: #f16051;
-  border-bottom: solid 2px rgba(255,255,255,0.06);
-  padding: 20px 0 20px 0;
-  font-weight: 400;
-}
-
-.weather__key:last-child {
-  border: 0;
-}
-
-.weather__value {
-  color: #fff;
-  font-weight: 200;
-}
-
-.weather__error {
-  color: #f16051;
-  font-size: 20px;
-  letter-spacing: 1px;
-  font-weight: 200;
 }

@@ -16,22 +16,8 @@ import Grid from '@material-ui/core/Grid';
 import Firebase from '../firebase';
 import ABar from './appbar.js'
 import {NavLink} from 'react-router-dom';
-import Slide from '@material-ui/core/Slide';
 
-import BackgroundSlideshow from 'react-background-slideshow'
-import bg from '../images/bg.jpg'
-import bg2 from '../images/bg2.jpg'
-import bg3 from '../images/bg3.jpg'
-import bg4 from '../images/bg4.jpg'
-import bg5 from '../images/bg5.jpg'
-import bg6 from '../images/bg6.jpg'
 
-/*firebase.initializeApp({
-  apiKey: "AIzaSyB-ahMKItpXJaJI5AvXFFYpTudEm8F6ozA",
-  authDomain: "inhouse-59fc6.firebaseapp.com"
-})
-
-*/
 
 Firebase;
 
@@ -67,19 +53,24 @@ const theme = createMuiTheme({
         boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
       },
     },
+    
 },
 });
 
 
-const styles = () => ({
+
+
+
+const styles = {
   container : {
     textAlign: "centre",
-    color: "#f50057"
+    textColor: "#004444"
     
 },
   p: {
-      color: "#ffffff",
+      color: "#000000",
   },
+ 
   root: {
     flexGrow: 1,
   },
@@ -90,7 +81,8 @@ const styles = () => ({
     marginLeft: -12,
     marginRight: 20,
   },
-});
+};
+
 
 
 class Home extends Component {
@@ -128,20 +120,7 @@ class Home extends Component {
         
       
     
-    <div >
-      <Grid container spacing={20}>
-        <Grid item xs={12} sm={12}>
-          <paper  style = {styles.container} >
-           <Typography varient="display1" align="center" color="secondary"><h3  > Soulfit is your one stop shop for all your dietary plans! </h3></Typography>
-           <Typography varient="display1" align="center" color="secondary"><h3>
-           In this day and age of the corporate fast food chains making us all round and heavy, SOULFIT is here to help you get BACK IN SHAPE!
-           </h3></Typography>
-          </paper>
-        </Grid>
-       </Grid>
 
-      </div>
-      
       <NavLink to="/myprofile">
         <Typography varient="display1" align="center" >
            <Button variant="extendedFab" aria-label="add" color="primary"  size="large" style={{marginTop: 2}} >

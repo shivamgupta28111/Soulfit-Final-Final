@@ -180,7 +180,7 @@ render() {
             paper: classes.drawerPaper,
           }}
         >
-          <div className={classes.drawerHeader}  className={classes.drawerhead}>
+          <div className={classes.drawerHeader} >
             <IconButton onClick={this.handleDrawerClose}>
               {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
             </IconButton>

@@ -18,46 +18,6 @@ Firebase;
 
 var user = firebase.auth().currentUser;
 
-//var user = firebase.auth().currentUser;
-
-
-
-//  ye dekha tha maine set() wala but isse call kaha karna h kaise samakj nai aya koshish ki thi 
- /*function writeUserData(userId, name, email, imageUrl) {
-  firebase.database().ref('users/' + userId).set({
-    username: name,
-    email: email,
-    profile_picture : imageUrl
-  });
-}*/
-
-
-
-function writeNewPost(uid, username, picture) {
-  // A user entry.
-  var postData = {
-    author: username,
-    uid: uid,
-
-    
-    Pic: picture
-  };
-
-  // Get a key for a new Post.
-  var newPostKey = firebase.database().ref().child('posts').push().key;
-
-  // Write the new post's data simultaneously in the posts list and the user's post list.
-  var updates = {};
-  updates['/posts/' + newPostKey] = postData;
-  updates['/user-posts/' + uid + '/' + newPostKey] = postData;
-
-  return firebase.database().ref().update(updates);
-}
-
-
-
-
-
 
 const theme = createMuiTheme({
   overrides: {
@@ -140,7 +100,6 @@ class TextFields extends React.Component {
   }
 
 
-  
 
 
   state = {
@@ -173,8 +132,27 @@ class TextFields extends React.Component {
       } 
     });
 
-
+    const theme = createMuiTheme({
+      overrides: {
+        palette: {
+          primary: {
+            // light: will be calculated from palette.primary.main,
+            main: '#ff4400',
+            // dark: will be calculated from palette.primary.main,
+            // contrastText: will be calculated to contast with palette.primary.main
+          },
+          secondary: {
+            light: '#0066ff',
+            main: '#0044ff',
+            // dark: will be calculated from palette.secondary.main,
+            contrastText: '#ffcc00',
+          },
+          // error: will use the default color
+        },
+      },
+    });
     
+
     const { classes } = this.props;
 
     return (
@@ -217,13 +195,7 @@ class TextFields extends React.Component {
           margin="normal"
           
         />
-         <TextField
-          id="Username"
-          label="Username"
-          defaultValue=""
-          className={classes.textField}
-          margin="normal"
-        />
+       
 
         
 
@@ -235,25 +207,8 @@ class TextFields extends React.Component {
           margin="normal"
         />
 
-        <TextField
-          id="select-Gender"
-          select
-          label="Please select your gender"
-          className={classes.textField}
-          value={this.state.Gender}
-          onChange={this.handleChange('Gender')}
-          SelectProps={{
-            MenuProps: {
-              className: classes.menu,
-            },
-          }}
-                >
-          {Genders.map(option => (
-            <MenuItem key={option.value} value={option.value}>
-              {option.label}
-            </MenuItem>
-          ))}
-        </TextField>
+        
+        
 
          <TextField
           id="Age"

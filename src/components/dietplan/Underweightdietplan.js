@@ -68,7 +68,7 @@ const styles = theme => ({
 });
 
 
-class Diet extends Component{
+class UnderweightDietplan extends Component{
   
   state = {
     value: 0,
@@ -109,11 +109,11 @@ class Diet extends Component{
     
   componentDidMount(meal_types) {
     const rootRef = Firebase.database().ref().child('react/Dietplan');
-    const vdescRef = rootRef.child('Veg/Desc')
-    const vname1Ref = rootRef.child('Veg/Lunch/Recipe1/name');
-    const vnutrients1Ref = rootRef.child('Veg/Lunch/Recipe1/nutrients');
-    const vingr1Ref = rootRef.child('Veg/Lunch/Recipe1/ingr');
-    const vprep1Ref = rootRef.child('Veg/Lunch/Recipe1/prep');
+    const vdescRef = rootRef.child('UWVeg/Desc')
+    const vname1Ref = rootRef.child('UWVeg/Breakfast/Recipe1/name');
+    const vnutrients1Ref = rootRef.child('UWVeg/Breakfast/Recipe1/nutrients');
+    const vingr1Ref = rootRef.child('UWVeg/Breakfast/Recipe1/ingr');
+    const vprep1Ref = rootRef.child('UWVeg/Breakfast/Recipe1/prep');
 
     vdescRef.on('value', snap =>{
       this.setState({
@@ -145,10 +145,10 @@ class Diet extends Component{
       });
     });
 
-    const vname2Ref = rootRef.child('Veg/Dinner/Recipe2/name');
-    const vnutrients2Ref = rootRef.child('Veg/Dinner/Recipe2/nutrients');
-    const vingr2Ref = rootRef.child('Veg/Dinner/Recipe2/ingr');
-    const vprep2Ref = rootRef.child('Veg/Dinner/Recipe2/prep');
+    const vname2Ref = rootRef.child('UWVeg/Breakfast/Recipe2/name');
+    const vnutrients2Ref = rootRef.child('UWVeg/Breakfast/Recipe2/nutrients');
+    const vingr2Ref = rootRef.child('UWVeg/Breakfast/Recipe2/ingr');
+    const vprep2Ref = rootRef.child('UWVeg/Breakfast/Recipe2/prep');
     vname2Ref.on('value', snap =>{
      this.setState({
        vname2:snap.val()
@@ -173,10 +173,10 @@ class Diet extends Component{
       });
     });
 
-    const vname3Ref = rootRef.child('Veg/Dinner/Recipe3/name');
-    const vnutrients3Ref = rootRef.child('Veg/Dinner/Recipe3/nutrients');
-    const vingr3Ref = rootRef.child('Veg/Dinner/Recipe3/ingr');
-    const vprep3Ref = rootRef.child('Veg/Dinner/Recipe3/prep');
+    const vname3Ref = rootRef.child('UWVeg/Breakfast/Recipe3/name');
+    const vnutrients3Ref = rootRef.child('UWVeg/Breakfast/Recipe3/nutrients');
+    const vingr3Ref = rootRef.child('UWVeg/Breakfast/Recipe3/ingr');
+    const vprep3Ref = rootRef.child('UWVeg/Breakfast/Recipe3/prep');
     vname3Ref.on('value', snap =>{
      this.setState({
        vname3:snap.val()
@@ -204,10 +204,10 @@ class Diet extends Component{
     
     
     
-    const vname4Ref = rootRef.child('Veg/Breakfast/Recipe1/name');
-    const vnutrients4Ref = rootRef.child('Veg/Breakfast/Recipe1/nutrients');
-    const vingr4Ref = rootRef.child('Veg/Breakfast/Recipe1/ingr');
-    const vprep4Ref = rootRef.child('Veg/Breakfast/Recipe1/prep');
+    const vname4Ref = rootRef.child('UWVeg/Snacks/Recipe2/name');
+    const vnutrients4Ref = rootRef.child('UWVeg/Snacks/Recipe2/nutrients');
+    const vingr4Ref = rootRef.child('UWVeg/Snacks/Recipe2/ingr');
+    const vprep4Ref = rootRef.child('UWVeg/Snacks/Recipe2/prep');
 
     
     vname4Ref.on('value', snap =>{
@@ -236,10 +236,10 @@ class Diet extends Component{
 
     
  
-    const vname5Ref = rootRef.child('Veg/Snacks/Recipe1/name');
-    const vnutrients5Ref = rootRef.child('Veg/Snacks/Recipe1/nutrients');
-    const vingr5Ref = rootRef.child('Veg/Snacks/Recipe1/ingr');
-    const vprep5Ref = rootRef.child('Veg/Snacks/Recipe1/prep');
+    const vname5Ref = rootRef.child('UWVeg/Snacks/Recipe1/name');
+    const vnutrients5Ref = rootRef.child('UWVeg/Snacks/Recipe1/nutrients');
+    const vingr5Ref = rootRef.child('UWVeg/Snacks/Recipe1/ingr');
+    const vprep5Ref = rootRef.child('UWVeg/Snacks/Recipe1/prep');
 
     vname5Ref.on('value', snap =>{
      this.setState({
@@ -277,11 +277,11 @@ class Diet extends Component{
 
 
     
-    const nvdescRef = rootRef.child('NVeg/Desc')
-    const nvname1Ref = rootRef.child('NVeg/Lunch/Recipe1/name');
-    const nvnutrients1Ref = rootRef.child('NVeg/Lunch/Recipe1/nutrients');
-    const nvingr1Ref = rootRef.child('NVeg/Lunch/Recipe1/ingr');
-    const nvprep1Ref = rootRef.child('NVeg/Lunch/Recipe1/prep');
+    const nvdescRef = rootRef.child('UWNVeg/Desc')
+    const nvname1Ref = rootRef.child('UWNVeg/Breakfast/Recipe1/name');
+    const nvnutrients1Ref = rootRef.child('UWNVeg/Breakfast/Recipe1/nutrients');
+    const nvingr1Ref = rootRef.child('UWNVeg/Breakfast/Recipe1/ingr');
+    const nvprep1Ref = rootRef.child('UWNVeg/Breakfast/Recipe1/prep');
 
     nvdescRef.on('value', snap =>{
       this.setState({
@@ -313,10 +313,10 @@ class Diet extends Component{
       });
     });
 
-    const nvname2Ref = rootRef.child('NVeg/Dinner/Recipe2/name');
-    const nvnutrients2Ref = rootRef.child('NVeg/Dinner/Recipe2/nutrients');
-    const nvingr2Ref = rootRef.child('NVeg/Dinner/Recipe2/ingr');
-    const nvprep2Ref = rootRef.child('NVeg/Dinner/Recipe2/prep');
+    const nvname2Ref = rootRef.child('UWNVeg/Breakfast/Recipe2/name');
+    const nvnutrients2Ref = rootRef.child('UWNVeg/Breakfast/Recipe2/nutrients');
+    const nvingr2Ref = rootRef.child('UWNVeg/Breakfast/Recipe2/ingr');
+    const nvprep2Ref = rootRef.child('UWNVeg/Breakfast/Recipe2/prep');
     nvname2Ref.on('value', snap =>{
      this.setState({
        nvname2:snap.val()
@@ -341,10 +341,10 @@ class Diet extends Component{
       });
     });
 
-    const nvname3Ref = rootRef.child('NVeg/Dinner/Recipe3/name');
-    const nvnutrients3Ref = rootRef.child('NVeg/Dinner/Recipe3/nutrients');
-    const nvingr3Ref = rootRef.child('NVeg/Dinner/Recipe3/ingr');
-    const nvprep3Ref = rootRef.child('NVeg/Dinner/Recipe3/prep');
+    const nvname3Ref = rootRef.child('UWNVeg/Breakfast/Recipe3/name');
+    const nvnutrients3Ref = rootRef.child('UWNVeg/Breakfast/Recipe3/nutrients');
+    const nvingr3Ref = rootRef.child('UWNVeg/Breakfast/Recipe3/ingr');
+    const nvprep3Ref = rootRef.child('UWNVeg/Breakfast/Recipe3/prep');
     nvname3Ref.on('value', snap =>{
      this.setState({
        nvname3:snap.val()
@@ -372,10 +372,10 @@ class Diet extends Component{
     
     
     
-    const nvname4Ref = rootRef.child('NVeg/Breakfast/Recipe1/name');
-    const nvnutrients4Ref = rootRef.child('NVeg/Breakfast/Recipe1/nutrients');
-    const nvingr4Ref = rootRef.child('NVeg/Breakfast/Recipe1/ingr');
-    const nvprep4Ref = rootRef.child('NVeg/Breakfast/Recipe1/prep');
+    const nvname4Ref = rootRef.child('UWNVeg/Snacks/Recipe1/name');
+    const nvnutrients4Ref = rootRef.child('UWNVeg/Snacks/Recipe1/nutrients');
+    const nvingr4Ref = rootRef.child('UWNVeg/Snacks/Recipe1/ingr');
+    const nvprep4Ref = rootRef.child('UWNVeg/Snacks/Recipe1/prep');
 
     
     nvname4Ref.on('value', snap =>{
@@ -404,10 +404,10 @@ class Diet extends Component{
 
    
    
-    const nvname5Ref = rootRef.child('NVeg/Snacks/Recipe1/name');
-    const nvnutrients5Ref = rootRef.child('NVeg/Snacks/Recipe1/nutrients');
-    const nvingr5Ref = rootRef.child('NVeg/Snacks/Recipe1/ingr');
-    const nvprep5Ref = rootRef.child('NVeg/Snacks/Recipe1/prep');
+    const nvname5Ref = rootRef.child('UWNVeg/Snacks/Recipe2/name');
+    const nvnutrients5Ref = rootRef.child('UWNVeg/Snacks/Recipe2/nutrients');
+    const nvingr5Ref = rootRef.child('UWNVeg/Snacks/Recipe2/ingr');
+    const nvprep5Ref = rootRef.child('UWNVeg/Snacks/Recipe2/prep');
 
     nvname5Ref.on('value', snap =>{
      this.setState({
@@ -432,196 +432,7 @@ class Diet extends Component{
          nvprep5:snap.val()
       });
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    
-  
-    const kdescRef = rootRef.child('Keto/Desc')
-    const kname1Ref = rootRef.child('Keto/Lunch/Recipe1/name');
-    const knutrients1Ref = rootRef.child('Keto/Lunch/Recipe1/nutrients');
-    const kingr1Ref = rootRef.child('Keto/Lunch/Recipe1/ingr');
-    const kprep1Ref = rootRef.child('Keto/Lunch/Recipe1/prep');
-
-    kdescRef.on('value', snap =>{
-      this.setState({
-        kdesc:snap.val()
-        
-       });
-      });
-    kname1Ref.on('value', snap =>{
-     this.setState({
-       kname1:snap.val()
-       
-      });
-      console.log(this.state.name)
-    });
-    knutrients1Ref.on('value', snap =>{
-      this.setState({
-        knutrients1:snap.val()
-      });
-    });
-      kingr1Ref.on('value', snap =>{
-        this.setState({
-         kingr1:snap.val()
-     });
-    });
-    
-    kprep1Ref.on('value', snap =>{
-       this.setState({
-         kprep1:snap.val()
-      });
-    });
-
-    const kname2Ref = rootRef.child('Keto/Dinner/Recipe2/name');
-    const knutrients2Ref = rootRef.child('Keto/Dinner/Recipe2/nutrients');
-    const kingr2Ref = rootRef.child('Keto/Dinner/Recipe2/ingr');
-    const kprep2Ref = rootRef.child('Keto/Dinner/Recipe2/prep');
-    kname2Ref.on('value', snap =>{
-     this.setState({
-       kname2:snap.val()
-       
-      });
-      
-    });
-    knutrients2Ref.on('value', snap =>{
-      this.setState({
-        knutrients2:snap.val()
-      });
-    });
-      kingr2Ref.on('value', snap =>{
-        this.setState({
-        kingr2:snap.val()
-     });
-    });
-    
-    kprep2Ref.on('value', snap =>{
-       this.setState({
-         kprep2:snap.val()
-      });
-    });
-
-    const kname3Ref = rootRef.child('Keto/Dinner/Recipe3/name');
-    const knutrients3Ref = rootRef.child('Keto/Dinner/Recipe3/nutrients');
-    const kingr3Ref = rootRef.child('Keto/Dinner/Recipe3/ingr');
-    const kprep3Ref = rootRef.child('Keto/Dinner/Recipe3/prep');
-    kname3Ref.on('value', snap =>{
-     this.setState({
-       kname3:snap.val()
-       
-      });
-     
-    });
-    knutrients3Ref.on('value', snap =>{
-      this.setState({
-        knutrients3:snap.val()
-      });
-    });
-      kingr3Ref.on('value', snap =>{
-        this.setState({
-         kingr3:snap.val()
-     });
-    });
-    
-    kprep3Ref.on('value', snap =>{
-       this.setState({
-         kprep3:snap.val()
-      });
-    });
-
-    
-   
-    
-    const kname4Ref = rootRef.child('Keto/Breakfast/Recipe1/name');
-    const knutrients4Ref = rootRef.child('Keto/Breakfast/Recipe1/nutrients');
-    const kingr4Ref = rootRef.child('Keto/Breakfast/Recipe1/ingr');
-    const kprep4Ref = rootRef.child('Keto/Breakfast/Recipe1/prep');
-
-    
-    kname4Ref.on('value', snap =>{
-     this.setState({
-       kname4:snap.val()
-       
-      });
-      console.log(this.state.name)
-    });
-    knutrients4Ref.on('value', snap =>{
-      this.setState({
-        knutrients4:snap.val()
-      });
-    });
-      kingr4Ref.on('value', snap =>{
-        this.setState({
-         kingr4:snap.val()
-     });
-    });
-    
-    kprep4Ref.on('value', snap =>{
-       this.setState({
-         kprep4:snap.val()
-      });
-    });
-
-    
-    
-    const kname5Ref = rootRef.child('Keto/Snacks/Recipe1/name');
-    const knutrients5Ref = rootRef.child('Keto/Snacks/Recipe1/nutrients');
-    const kingr5Ref = rootRef.child('Keto/Snacks/Recipe1/ingr');
-    const kprep5Ref = rootRef.child('Keto/Snacks/Recipe1/prep');
-
-    kname5Ref.on('value', snap =>{
-     this.setState({
-       kname5:snap.val()
-       
-      });
-      console.log(this.state.name)
-    });
-    knutrients5Ref.on('value', snap =>{
-      this.setState({
-        knutrients5:snap.val()
-      });
-    });
-      kingr5Ref.on('value', snap =>{
-        this.setState({
-         kingr5:snap.val()
-     });
-    });
-    
-    kprep5Ref.on('value', snap =>{
-       this.setState({
-         kprep5:snap.val()
-      });
-    });
   }
-
-/*
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   render() {
 
@@ -632,7 +443,7 @@ class Diet extends Component{
       <Fragment>
 
       <ABar />
-      <div >
+      <div flex="1">
         <AppBar position="static" color="default">
           <Tabs
             value={this.state.value}
@@ -645,7 +456,6 @@ class Diet extends Component{
           >
             <Tab label="Vegetarian" />
             <Tab label="Non-Vegetarian" />
-            <Tab label="Keto Diet" />
           </Tabs>
         </AppBar>
         <SwipeableViews
@@ -656,14 +466,7 @@ class Diet extends Component{
         >
           
           
-          
-          
-          
-          
-          
-          
-          
-          
+        
           
           
           
@@ -672,7 +475,7 @@ class Diet extends Component{
           <Paper>
           <div className="App">
 
-          <Typography variant="headline" gutterBottom>{this.state.vdesc}</Typography>
+          <Typography variant="headline" align="center" gutterBottom>{this.state.vdesc}</Typography>
           <Typography align="center" gutterBottom>
           <h3 > MEALS  </h3>
           -----
@@ -781,7 +584,7 @@ class Diet extends Component{
           <Paper>
           <div className="App">
 
-          <Typography variant="headline" gutterBottom>{this.state.nvdesc}</Typography>
+          <Typography variant="headline" align="center" gutterBottom>{this.state.nvdesc}</Typography>
           <Typography align="center" gutterBottom>
           <h3 > MEALS  </h3>
           -----
@@ -871,123 +674,17 @@ class Diet extends Component{
           <Typography variant="headline" gutterBottom> PREPARATION : </Typography>
           <Typography variant="title" gutterBottom >{this.state.nvprep5}</Typography>
           </div>
-
-          </Paper>
-          
+          </Paper>  
           </TabContainer>
-
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-          <TabContainer centered dir={theme.direction}>
-          <Paper>
-          <div className="App">
-
-          <Typography variant="headline" gutterBottom>{this.state.kdesc}</Typography>
-          <Typography align="center" gutterBottom>
-          <h3 > MEALS  </h3>
-          -----
-          </Typography>
-          
-          <Typography align="center" variant="display2" gutterBottom>{this.state.kname1}</Typography>
-          
-          
-          <Typography variant="display1" align="center" gutterBottom >{this.state.knutrients1}</Typography>
-          
-          <Typography variant="headline" gutterBottom> INGREDIENTS : </Typography>
-          <Typography variant="title" gutterBottom >{this.state.kingr1}</Typography>
-          
-          <Typography variant="headline" gutterBottom> PREPARATION : </Typography>
-          <Typography variant="title" gutterBottom >{this.state.kprep1}</Typography>
-          </div>
-
-
-          <div className="App">
-          <Typography align="center" gutterBottom>
-          -----
-          </Typography>
-          <Typography align="center" variant="display2" gutterBottom>{this.state.kname2}</Typography>
-          
-          
-          <Typography variant="display1" align="center" gutterBottom >{this.state.knutrients2}</Typography>
-          
-          <Typography variant="headline" gutterBottom> INGREDIENTS : </Typography>
-          <Typography variant="title" gutterBottom >{this.state.kingr2}</Typography>
-          
-          <Typography variant="headline" gutterBottom> PREPARATION : </Typography>
-          <Typography variant="title" gutterBottom >{this.state.kprep2}</Typography>
-          </div>
-          
-
-          <div className="App">
-          <Typography align="center" gutterBottom>
-          -----
-          </Typography>
-          <Typography align="center" variant="display2" gutterBottom>{this.state.kname3}</Typography>
-          
-          
-          <Typography variant="display1" align="center" gutterBottom >{this.state.knutrients3}</Typography>
-          
-          <Typography variant="headline" gutterBottom> INGREDIENTS : </Typography>
-          <Typography variant="title" gutterBottom >{this.state.kingr3}</Typography>
-          
-          <Typography variant="headline" gutterBottom> PREPARATION : </Typography>
-          <Typography variant="title" gutterBottom >{this.state.kprep3}</Typography>
-          </div>
-          <div>
-          <Typography align="center" gutterBottom>
-          -----
-          <h3 > SNACKS  </h3>
-          -----
-          </Typography>
-          
-          <Typography align="center" variant="display2" gutterBottom>{this.state.kname4}</Typography>
-          
-          
-          <Typography variant="display1" align="center" gutterBottom >{this.state.knutrients4}</Typography>
-          
-          <Typography variant="headline" gutterBottom> INGREDIENTS : </Typography>
-          <Typography variant="title" gutterBottom >{this.state.kingr4}</Typography>
-          
-          <Typography variant="headline" gutterBottom> PREPARATION : </Typography>
-          <Typography variant="title" gutterBottom >{this.state.kprep4}</Typography>
-          </div>
-
-          <div>
-          <Typography align="center" gutterBottom>
-          -----
-          </Typography>
-          
-          <Typography align="center" variant="display2" gutterBottom>{this.state.kname5}</Typography>
-          
-          
-          <Typography variant="display1" align="center" gutterBottom >{this.state.knutrients5}</Typography>
-          
-          <Typography variant="headline" gutterBottom> INGREDIENTS : </Typography>
-          <Typography variant="title" gutterBottom >{this.state.kingr5}</Typography>
-          
-          <Typography variant="headline" gutterBottom> PREPARATION : </Typography>
-          <Typography variant="title" gutterBottom >{this.state.kprep5}</Typography>
-          </div>
-          </Paper>
-          </TabContainer>
-        </SwipeableViews>
+         </SwipeableViews>
       </div>
       <div>
       <Paper align="center" className={classes.paper} >
       <div>
-        Search Here - :
+        <Typography align="center" variant="title">
+        Search Here To Know More About Your Diet Plan! 
+        OR Choose from One Of The Videos Below!
+        </Typography>
           <Searchbar onSearchTermChange={term =>this.videoSearch(term)} />
           <VideoDetail video={this.state.selectedVideo} />
           <VideoList
@@ -1002,9 +699,9 @@ class Diet extends Component{
      ) }
 } 
 
-Diet.propTypes = {
+UnderweightDietplan.propTypes = {
   classes: PropTypes.object.isRequired,
   theme: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles, { withTheme: true })(Diet);
+export default withStyles(styles, { withTheme: true })(UnderweightDietplan); 
