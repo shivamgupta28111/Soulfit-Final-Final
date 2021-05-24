@@ -1,4 +1,4 @@
-# React-FirebaseUi Authentication Google, Facebook, Twitter, Github, Email
+# React-FirebaseUi Authentication Google, Facebook, Twitter, Github, Email, made by our team
 
 ## Youtube Video
 
